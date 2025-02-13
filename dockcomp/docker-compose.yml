@@ -1,0 +1,8 @@
+services:
+  nginx:
+    image: nginx
+    container_name: portal
+    ports:
+      - "80:80"
+    volumes:
+      - /home/ec2-user/home_listings:/usr/share/nginx/html
