@@ -13,11 +13,11 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_USER: posgres
-      POSTGRES_PASSWORD: mypassword
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
       POSTGRES_DB: techbleat
     volumes:
-      - /home/ec2-user/date:/var/lib/postgresql/data
+      - /home/ec2-user/data:/var/lib/postgresql/data
   python:
     image: python:3.9
     ports:
