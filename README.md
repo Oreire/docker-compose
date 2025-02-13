@@ -15,3 +15,6 @@ Step-by-step implementation:
 11.	 Create the docker-compose file: vim docker-compose.yml
 12.	Run the docker compose in the background: docker-compose up -d
 13.	 Installed Tree on the Docker-Compose-Node: sudo yum install tree -y
+
+
+A file containing the artefacts created has been attached.
