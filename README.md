@@ -37,5 +37,5 @@ Using Docker Compose to Deploy web application using Nginx image
     
     with the web server (Nginx) and database (Postgres): a choce between the use of web frameworks 
     
-    like Flask or Django will be pursued baesd on the requiremnets. 
+    like Flask or Django will be pursued based on the requiremnets. 
         
