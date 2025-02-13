@@ -27,7 +27,7 @@ Using Docker Compose to Deploy web application using Nginx image
 
     -   Nginx will serve as the ##presentation tier (Front-end web server to serve static contents.)
 
-    -   Postgres will undertak ethe role of the data tier (Backend server) for the storage and 
+    -   Postgres will undertake the role of the data tier (Backend server) for the storage and 
         managemnet of the application's data.
 
     -   Python is acting as the application tier, which handles the application's business logic and 
