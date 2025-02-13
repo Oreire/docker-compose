@@ -33,5 +33,9 @@ Using Docker Compose to Deploy web application using Nginx image
     -   Python is acting as the application tier, which handles the application's business logic and 
         interacts with the database backend.
 
-        -   However, the applications'code and design will determine how the Python application communicates with the web server (Nginx) and database (Postgres): a choce between the use of web frameworks like Flask or Django will be pursued baesd on the requiremnets. 
+    ##However, the applications'code and design will determine how the Python application communicates
+    
+    ##with the web server (Nginx) and database (Postgres): a choce between the use of web frameworks 
+    
+    ##like Flask or Django will be pursued baesd on the requiremnets. 
         
