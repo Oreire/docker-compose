@@ -18,13 +18,25 @@ services:
       POSTGRES_DB: techbleat
     volumes:
       - /home/ec2-user/data:/var/lib/postgresql/data
-  python:
-    image: python:3.9
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prom-cont
     ports:
-      - "5000:5000"
+      - "9090:9090"
     volumes:
-      - ./app:/usr/src/app
-    working_dir: /usr/src/app
-    command: python app.py
-    depends_on:
-      - postgres
+      - /home/ec2-user/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - /home/ec2-user/data:/etc/prometheus
+    restart: always
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: graf-cont
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: lancer
+      GF_SECURITY_ADMIN_PASSWORD: lancer
+    restart: always
+volumes:
+  data:
+  
