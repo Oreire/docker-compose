@@ -28,6 +28,13 @@ services:
       - /home/ec2-user/prom-data:/etc/prometheus
     restart: always
 
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node-exporter
+    ports:
+      - "9100:9100"
+    restart: always
+
   grafana:
     image: grafana/grafana:latest
     container_name: graf-cont
