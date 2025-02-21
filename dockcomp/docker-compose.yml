@@ -6,7 +6,6 @@ services:
       - "80:80"
     volumes:
       - /home/ec2-user/home_listings:/usr/share/nginx/html
-    
   postgres:
     image: postgres:latest
     container_name: backend_db
@@ -18,23 +17,6 @@ services:
       POSTGRES_DB: techbleat
     volumes:
       - /home/ec2-user/data:/var/lib/postgresql/data
-  prometheus:
-    image: prom/prometheus:latest
-    container_name: prom-cont
-    ports:
-      - "9090:9090"
-    volumes:
-      - /home/ec2-user/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-      - /home/ec2-user/prom-data:/etc/prometheus
-    restart: always
-
-  node-exporter:
-    image: prom/node-exporter:latest
-    container_name: node-exporter
-    ports:
-      - "9100:9100"
-    restart: always
-
   grafana:
     image: grafana/grafana:latest
     container_name: graf-cont
@@ -44,6 +26,27 @@ services:
       GF_SECURITY_ADMIN_USER: lancer
       GF_SECURITY_ADMIN_PASSWORD: lancer
     restart: always
-volumes:
-  data:
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prom-cont
+    ports:
+      - "9090:9090"
+    volumes:
+      - /home/ec2-user/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - /home/ec2-user/prom-data:/etc/prometheus
+    restart: always
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node_exporter
+    ports:
+      - "9100:9100"
+    deploy:
+      restart_policy:
+        condition: always
+    networks:
+      - monitoring
+
+networks:
+  monitoring:
+    driver: bridge
   
