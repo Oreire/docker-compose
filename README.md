@@ -1,5 +1,5 @@
 # docker-compose
-Using Docker Compose to Deploy web application using Nginx image
+## Web Application Deployment Using Docker-Compose
 
 ## Step-by-step implementation:
 -   Created an Amazon Linux EC2 Machine with appropriate ssh key and SGs
