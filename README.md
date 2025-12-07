@@ -1,6 +1,8 @@
 # docker-compose
 ## Web Application Deployment Using Docker-Compose
 
+Overview:
+Designed and implemented a containerized architecture for a multi‑service web application using Docker Compose. Automated service orchestration streamlined local development and testing, enabling rapid environment setup and consistent application behavior across teams. This project demonstrates modern DevOps practices by reducing configuration drift, improving developer productivity, and laying the foundation for scalable containerized deployments.
 ## Step-by-step implementation:
 -   Created an Amazon Linux EC2 Machine with appropriate ssh key and SGs
 -   Installed git using the command: sudo yum install git -y 
